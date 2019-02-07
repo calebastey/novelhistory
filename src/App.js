@@ -1,28 +1,38 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import BookTimeline from './timeline/BookTimeline';
+import BookDetails from './details/BookDetails'
 import './App.css';
+import { data } from './data'
+
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            bookId: null,
+            data: data.books
+        };
+    }
+
+    onTimelineSelect = (selectedTimelineId) => {
+        if(selectedTimelineId >= 0) {
+            this.setState({bookId: selectedTimelineId});
+        }
+    };
+
+    render() {
+        return (
+            <div className="App">
+                <div className="bookDetails">
+                    <BookDetails bookId={this.state.bookId}/>
+                </div>
+                <div className="timeline">
+                    <BookTimeline onTimelineSelect={this.onTimelineSelect} data={this.state.data} />
+                </div>
+            </div>
+        );
+    }
 }
 
 export default App;

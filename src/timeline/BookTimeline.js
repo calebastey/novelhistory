@@ -9,7 +9,7 @@ const options = {
     stack: true,
     showMajorLabels: true,
     showCurrentTime: false,
-    zoomMin: 1000000,
+    zoomMin: 31556952000,
     type: 'box'
 };
 
@@ -21,12 +21,12 @@ class BookTimeline extends Component {
 
     render() {
         return(
-            <div>
-                <h2>Timeline</h2>
+            <div className="col">
                 <div>
                     <Timeline options={options}
                               clickHandler={this.clickHandler.bind(this)}
                               items={this.props.data}
+                              selection={this.props.bookId}
                       />
                 </div>
             </div>

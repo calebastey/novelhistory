@@ -1,14 +1,87 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+h1 {
+    font-size: 24px;
+    color: #d46355;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+h2 {
+    font-size: 22px;
+    color: #d46355;
 }
+
+h3 {
+    font-size: 18px;
+    color: #d46355;
+}
+
+h4 {
+    font-size: 16px;
+    color: #4F7178;
+}
+
+h5 {
+    font-size: 12px;
+    color: #4F7178;
+}
+
+h6 {
+    font-size: 10px;
+    color: #BF8176;
+}
+
+p {
+    font-size: 14px;
+    color: #292021;
+}
+
+b {
+    font-size: 14px;
+    color: #292021;
+}
+
+span {
+    font-size: 14px;
+    color: #292021;
+}
+
+div {
+    font-size: 14px;
+    color: #292021;
+}
+
+.summary {
+    margin-top: 10px;
+    text-align: left;
+    text-justify: inter-word;
+}
+
+.left-align {
+    text-align: left;
+}
+
+.bookDetails {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+body {
+    background-color: #e1d9ce;
+}
+
+nav {
+    background-color: #cab08f;
+}
+
+.years-referenced {
+    margin-top: 20px;
+}
+
+/* change the background color */
+.navbar-custom .navbar-light {
+    background-color: #cab08f;
+}
+/* change the brand and text color */
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+    color: #4F7178;
+}
+

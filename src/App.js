@@ -1,35 +1,26 @@
 import React, { Component } from 'react';
-import BookTimeline from './timeline/BookTimeline';
-import BookDetails from './details/BookDetails'
+import {
+    BrowserRouter as Router,
+    Route,
+    Switch
+} from 'react-router-dom'
+import NavBar from './navbar/NavBar'
+import Main from './main/Main'
 import './App.css';
-import { data } from './data'
 
 
 class App extends Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            bookId: null,
-            data: data.books
-        };
-    }
-
-    onTimelineSelect = (selectedTimelineId) => {
-        if(selectedTimelineId >= 0) {
-            this.setState({bookId: selectedTimelineId});
-        }
-    };
-
     render() {
         return (
             <div className="App">
-                <div className="bookDetails">
-                    <BookDetails bookId={this.state.bookId}/>
-                </div>
-                <div className="timeline">
-                    <BookTimeline onTimelineSelect={this.onTimelineSelect} data={this.state.data} />
-                </div>
+                <NavBar/>
+                <Router>
+                    <Switch>
+                        <Route path="/" component={Main}/>
+                        <Route path="/:title" component={Main}/>
+                    </Switch>
+                </Router>
             </div>
         );
     }

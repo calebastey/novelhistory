@@ -4,7 +4,7 @@ const data =
             {
                 id: 0,
                 uri: '/war-and-peace',
-                content: "War and Peace",
+                title: "War and Peace",
                 author: "Leo Tolstoy",
                 start: '1805',
                 end: '1812',
@@ -15,7 +15,7 @@ const data =
             {
                 id: 1,
                 uri: "/quicksilver",
-                content: "Quicksilver",
+                title: "Quicksilver",
                 author: "Neal Stephenson",
                 start: '1660',
                 end: '1688',
@@ -28,7 +28,7 @@ const data =
             {
                 id: 2,
                 uri: '/the-confusion',
-                content: "The Confusion",
+                title: "The Confusion",
                 author: "Neal Stephenson",
                 start: '1689',
                 end: '1704',
@@ -41,9 +41,10 @@ const data =
             {
                 id: 3,
                 uri: '/the-system-of-the-world',
-                content: "The System of The World",
+                title: "The System of The World",
                 author: "Neal Stephenson",
                 start: '1714',
+                end: '1730',
                 summary: "England, 1714. London has long been home to a secret war between the brilliant, enigmatic Master of the Mint and closet alchemist, Isaac Newton, and his archnemesis, the insidious counterfeiter Jack the Coiner. Hostilities are suddenly moving to a new and more volatile level as Half-Cocked Jack hatches a daring plan, aiming for the total corruption of Britain's newborn monetary system.",
                 marketplaceLink: "<a target=\"_blank\"  href=\"https://www.amazon.com/gp/product/0060750863/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0060750863&linkCode=as2&tag=novelhistory-20&linkId=18dce4d39f329e317648e64ca6c6d271\"><img border=\"0\" src=\"//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=US&ASIN=0060750863&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL250_&tag=novelhistory-20\" ></a><img src=\"//ir-na.amazon-adsystem.com/e/ir?t=novelhistory-20&l=am2&o=1&a=0060750863\" width=\"1\" height=\"1\" border=\"0\" alt=\"\" style=\"border:none !important; margin:0px !important;\" />",
                 rating: 4.1

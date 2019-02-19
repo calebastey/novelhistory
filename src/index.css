@@ -1,20 +1,28 @@
+@font-face {
+    font-family: 'CaslonAntique';
+    src: url(./fonts/caslonantique.woff) format('woff');
+}
+
 h1 {
-    font-size: 24px;
+    font-size: 32px;
     color: #d46355;
+    font-family: "CaslonAntique";
 }
 
 h2 {
-    font-size: 22px;
+    font-size: 28px;
     color: #d46355;
+    font-family: "CaslonAntique";
 }
 
 h3 {
-    font-size: 18px;
+    font-size: 22px;
     color: #d46355;
+    font-family: "CaslonAntique";
 }
 
 h4 {
-    font-size: 16px;
+    font-size: 18px;
     color: #4F7178;
 }
 
@@ -29,22 +37,25 @@ h6 {
 }
 
 p {
-    font-size: 14px;
+    font-size: 16px;
+    font-family: 'Old Standard TT', serif;
     color: #292021;
 }
 
 b {
-    font-size: 14px;
+    font-size: 16px;
+    font-family: 'Old Standard TT', serif;
     color: #292021;
 }
 
 span {
-    font-size: 14px;
+    font-size: 16px;
+    font-family: 'Old Standard TT', serif;
     color: #292021;
 }
 
 div {
-    font-size: 14px;
+    font-size: 16px;
     color: #292021;
 }
 
@@ -58,17 +69,18 @@ div {
     text-align: left;
 }
 
-.bookDetails {
-    margin-top: 20px;
-    margin-bottom: 20px;
+.book-details {
+    margin: 20px 0 2px 0;
+    padding-bottom: 210px;
 }
 
 body {
-    background-color: #e1d9ce;
+    background-color: #f2eecb;
+    background-image: url("./img/exclusive-paper.png");
 }
 
 nav {
-    background-color: #cab08f;
+    background-color: #f2eecb;
 }
 
 .years-referenced {
@@ -85,3 +97,17 @@ nav {
     color: #4F7178;
 }
 
+.timeline {
+    background-color: #e1d9ce;
+    position: fixed;
+    bottom: -30px;
+    left: 0;
+    right: 0;
+}
+
+.amazon-link {
+    padding: 20px;
+    border-style: solid;
+    border-color: #cab08f;
+    border-width: 1px;
+}

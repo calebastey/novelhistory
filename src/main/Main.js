@@ -8,23 +8,29 @@ class Main extends Component {
     constructor(props) {
         super(props);
         var bookId = null;
+        var book = null;
         let uriIdx = data.books.map(book => book.uri).indexOf(props.location.pathname);
         if (uriIdx >= 0) {
-            bookId = data.books[uriIdx].id;
+            book = data.books[uriIdx];
+            bookId = book.id;
         }
 
         this.state = {
             path: props.location.pathname,
             bookId: bookId,
+            book: book,
             data: data.books
         };
     }
 
     onTimelineSelect = (selectedTimelineId) => {
-        if(selectedTimelineId >= 0) {
-            this.setState({bookId: selectedTimelineId});
+        if(selectedTimelineId != null && selectedTimelineId >= 0) {
             let book = data.books[selectedTimelineId];
-            if (book.uri) {
+            this.setState({
+                bookId: selectedTimelineId,
+                book: book
+            });
+            if (book && book.uri) {
                 this.props.history.push(book.uri);
             }
         }
@@ -33,8 +39,8 @@ class Main extends Component {
     render() {
         return(
             <div className="container">
-                <div className="bookDetails">
-                    <BookDetails bookId={this.state.bookId}/>
+                <div className="book-details">
+                    <BookDetails book={this.state.book || undefined}/>
                 </div>
                 <div className="timeline row">
                     <BookTimeline onTimelineSelect={this.onTimelineSelect} data={this.state.data} bookId={this.state.bookId} />

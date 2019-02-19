@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import defaultBook from './book-cover.png';
 
 class MarketplaceLink extends Component {
 
@@ -9,13 +10,16 @@ class MarketplaceLink extends Component {
     render() {
         if (this.props.link) {
             return(
-                <div dangerouslySetInnerHTML={this.createMarkup()} />
+                <div className="amazon-link">
+                    <div dangerouslySetInnerHTML={this.createMarkup()} />
+                    <span>Find me on Amazon</span>
+                </div>
             )
         }
         else {
             return(
-                <div>
-                    No book link
+                <div className="amazon-link">
+                    <img src={defaultBook} alt='default book' width="200px"/>
                 </div>
             )
         }

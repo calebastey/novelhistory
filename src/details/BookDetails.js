@@ -21,9 +21,9 @@ class BookDetails extends Component {
                     <h3 className="left-align">{book.author}</h3>
                     <StarRating rating={book.rating}/>
                     <BookYearsReferenced start={book.start} end={book.end} />
-                    <p className="summary">
+                    <div className="summary">
                         <div dangerouslySetInnerHTML={this.createMarkup(book)} />
-                    </p>
+                    </div>
                 </div>
             </div>
         )

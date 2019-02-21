@@ -10,6 +10,8 @@ class Main extends Component {
         var bookId = null;
         var book = null;
         let uriIdx = data.books.map(book => book.uri).indexOf(props.location.pathname);
+        let maxId  = Math.max(...data.books.map(book => book.id));
+        console.log("maxId", maxId);
         if (uriIdx >= 0) {
             book = data.books[uriIdx];
             bookId = book.id;
@@ -19,8 +21,10 @@ class Main extends Component {
             path: props.location.pathname,
             bookId: bookId,
             book: book,
-            data: data.books
+            data: data.books,
+            maxId: maxId
         };
+        this.handleKeyDown = this.handleKeyDown.bind(this);
     }
 
     onTimelineSelect = (selectedTimelineId) => {
@@ -36,9 +40,32 @@ class Main extends Component {
         }
     };
 
+    handleKeyDown(e) {
+        if (e.keyCode === 37) {
+            if (this.state.bookId != null && this.state.bookId > 0) {
+                let newBookId = this.state.bookId - 1;
+                let book = data.books[newBookId];
+                this.setState({
+                    bookId: newBookId,
+                    book: book
+                });
+            }
+        }
+        if (e.keyCode === 39) {
+            if (this.state.bookId != null && this.state.bookId < this.state.maxId) {
+                let newBookId = this.state.bookId + 1;
+                let book = data.books[newBookId];
+                this.setState({
+                    bookId: newBookId,
+                    book: book
+                });
+            }
+        }
+    }
+
     render() {
         return(
-            <div className="container">
+            <div tabIndex="-1" className="container" onKeyDown={ this.handleKeyDown }>
                 <div className="book-details">
                     <BookDetails book={this.state.book || undefined}/>
                 </div>

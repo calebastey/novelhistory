@@ -22,11 +22,11 @@ class BookTimeline extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            minYear: Number.parseInt(1600),
-            maxYear: Number.parseInt(1820)
+            minYear: 1600,
+            maxYear: 1820
         };
-        this.minYearHandler = this.minYearHandler.bind(this);
-        this.maxYearHandler = this.maxYearHandler.bind(this);
+        //this.minYearHandler = this.minYearHandler.bind(this);
+        //this.maxYearHandler = this.maxYearHandler.bind(this);
         this.timelineRef = React.createRef();
     }
 
@@ -61,11 +61,12 @@ class BookTimeline extends Component {
     render() {
         return(
             <div className="col">
-                <div>{/*
+                <div>
+                    {/*
                     <TimelineInputs minYear={this.state.minYear}
                                     maxYear={this.state.maxYear}
-                                    minYearHandler={this.minYearHandler}
-                                    maxYearHandler={this.maxYearHandler}
+                                    minYearHandler={this.minYearHandler.bind(this)}
+                                    maxYearHandler={this.maxYearHandler.bind(this)}
                     />
                     */}
                     <Timeline options={options}

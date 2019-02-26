@@ -3,35 +3,35 @@ import Timeline from 'react-visjs-timeline'
 import TimelineInputs from './TimelineInputs'
 import './vis-styles.css'
 
-const options = {
-    min: '1000',
-    max: '2030',
-    width: '100%',
-    height: '150px',
-    stack: true,
-    showMajorLabels: true,
-    showMinorLabels: true,
-    showTooltips: true,
-    showCurrentTime: false,
-    zoomMin: 315569520000,
-    type: 'range',
-};
-
 class BookTimeline extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
             minYear: 1600,
-            maxYear: 1820
+            maxYear: 1820,
+            data: [],
+            hasData: false
         };
         //this.minYearHandler = this.minYearHandler.bind(this);
         //this.maxYearHandler = this.maxYearHandler.bind(this);
         this.timelineRef = React.createRef();
     }
 
-    componentDidUpdate() {
-       // this.timelineRef.current.$el.setWindow(this.state.minYear, this.state.maxYear);
+    timelineOptions() {
+        return {
+            min: '1000',
+            max: '2030',
+            width: '100%',
+            height: '150px',
+            stack: true,
+            showMajorLabels: true,
+            showMinorLabels: true,
+            showTooltips: true,
+            showCurrentTime: false,
+            zoomMin: 315569520000,
+            type: 'range',
+        };
     }
 
     clickHandler(timelineItem) {
@@ -59,25 +59,31 @@ class BookTimeline extends Component {
     }
 
     render() {
-        return(
-            <div className="col">
-                <div>
-                    {/*
-                    <TimelineInputs minYear={this.state.minYear}
-                                    maxYear={this.state.maxYear}
-                                    minYearHandler={this.minYearHandler.bind(this)}
-                                    maxYearHandler={this.maxYearHandler.bind(this)}
-                    />
-                    */}
-                    <Timeline options={options}
-                              clickHandler={this.clickHandler.bind(this)}
-                              items={this.props.data}
-                              selection={[this.props.bookId]}
-                              ref={this.timelineRef}
-                    />
+        if (this.props.data.length === 0) {
+            return <div/>
+        }
+        else {
+            return (
+                <div className="col">
+                    <div>
+                        {/*
+                        <TimelineInputs minYear={this.state.minYear}
+                                        maxYear={this.state.maxYear}
+                                        minYearHandler={this.minYearHandler.bind(this)}
+                                        maxYearHandler={this.maxYearHandler.bind(this)}
+                        />
+                        */}
+                        <Timeline options={this.timelineOptions()}
+                                  clickHandler={this.clickHandler.bind(this)}
+                                  items={this.props.data}
+                                  selection={[this.props.bookId]}
+                                  ref={this.timelineRef}
+                        />;
+                        />
+                    </div>
                 </div>
-            </div>
-        )
+            )
+        }
     }
 }
 

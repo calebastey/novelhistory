@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import BookTimeline from '../timeline/BookTimeline';
 import BookDetails from '../details/BookDetails'
 import { data } from "../data";
+import Firebase from "../App";
 
 class Main extends Component {
 
@@ -11,7 +12,6 @@ class Main extends Component {
         var book = null;
         let uriIdx = data.books.map(book => book.uri).indexOf(props.location.pathname);
         let maxId  = Math.max(...data.books.map(book => book.id));
-        console.log("maxId", maxId);
         if (uriIdx >= 0) {
             book = data.books[uriIdx];
             bookId = book.id;
@@ -25,6 +25,30 @@ class Main extends Component {
             maxId: maxId
         };
         this.handleKeyDown = this.handleKeyDown.bind(this);
+    }
+
+    getData() {
+        let db = Firebase.firestore();
+        let t = this;
+        db.collection('novels')
+            .get()
+            .then((snapshot) => {
+                let novels = [];
+                snapshot.forEach((doc) => {
+                    novels = novels.concat([doc.data()]);
+                });
+                t.setState({
+                    novels: novels,
+                    fetched: true
+                });
+            })
+            .catch((error) => {
+                console.log("Error fetching: ", error);
+            });
+    };
+
+    componentDidMount() {
+        this.getData();
     }
 
     onTimelineSelect = (selectedTimelineId) => {

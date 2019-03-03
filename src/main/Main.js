@@ -21,9 +21,9 @@ class Main extends Component {
     }
 
     fetchData() {
-        let db = Firebase.firestore();
-        let t = this;
-        db.collection('novels')
+        let firestore = Firebase.firestore();
+        let that = this;
+        firestore.collection('novels')
             .get()
             .then((snapshot) => {
                 let books = [];
@@ -37,7 +37,7 @@ class Main extends Component {
                 }
                 let maxId = Math.max(...books.map(book => book.id));
 
-                t.setState({
+                that.setState({
                     books: books,
                     currentBook: currentBook,
                     maxId: maxId

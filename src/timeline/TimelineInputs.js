@@ -13,20 +13,17 @@ class TimelineInputs extends Component {
     }
 
     handleMinBlur(e) {
-        console.log(e.target.value);
         this.props.minYearHandler(e);
         return null;
     }
 
     handleMaxBlur(e) {
-        console.log(e.target.value);
         this.props.maxYearHandler(e);
         return null;
     }
 
     validateMin(e) {
         let newValue = e.target.value;
-        console.log(e.target.value);
         if (newValue > this.props.maxYear) {
             this.setState({
                 valid: false
@@ -40,7 +37,6 @@ class TimelineInputs extends Component {
 
     validateMax(e) {
         let newValue = e.target.value;
-        console.log(e.target.value);
         if (newValue < this.props.minYear) {
             this.setState({
                 valid: false
@@ -59,9 +55,8 @@ class TimelineInputs extends Component {
                     <span className="error">Invalid Year Range</span>
                 </div>
             )
-        } else {
-            return null;
         }
+        return null;
     }
 
     render() {

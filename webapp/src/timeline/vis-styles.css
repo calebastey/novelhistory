@@ -1,0 +1,16 @@
+.vis-item {
+    background-color: #cab08f;
+    border-color: #292021;
+    font-family: 'Old Standard TT', serif;
+    height: 5px;
+}
+
+.vis-selected {
+    background-color: #d46355 !important;
+    border-color: #292021 !important;
+    font-family: 'Old Standard TT', serif;
+}
+
+.vis-time-axis {
+    color: red;
+}

@@ -1,0 +1,117 @@
+@import "scss/colors.scss";
+
+@font-face {
+    font-family: 'CaslonAntique';
+    src: url(./fonts/caslonantique.woff) format('woff');
+}
+
+h1 {
+    font-size: 32px;
+    color: $header-text;
+    font-family: "CaslonAntique";
+}
+
+h2 {
+    font-size: 28px;
+    color: $header-text;
+    font-family: "CaslonAntique";
+}
+
+h3 {
+    font-size: 22px;
+    color: $header-text;
+    font-family: "CaslonAntique";
+}
+
+h4 {
+    font-size: 18px;
+    color: $subheader-text;
+}
+
+h5 {
+    font-size: 12px;
+    color: $subheader-text;
+}
+
+h6 {
+    font-size: 10px;
+    color: #BF8176;
+}
+
+p {
+    font-size: 16px;
+    font-family: 'Old Standard TT', serif;
+    color: #292021;
+}
+
+b {
+    font-size: 16px;
+    font-family: 'Old Standard TT', serif;
+    color: #292021;
+}
+
+span {
+    font-size: 16px;
+    font-family: 'Old Standard TT', serif;
+    color: #292021;
+}
+
+div {
+    font-size: 16px;
+    color: #292021;
+}
+
+.summary {
+    margin-top: 10px;
+    text-align: left;
+    text-justify: inter-word;
+    font-size: 16px;
+    font-family: 'Old Standard TT', serif;
+}
+
+.left-align {
+    text-align: left;
+}
+
+.book-details {
+    margin: 20px 0 2px 0;
+    padding-bottom: 210px;
+}
+
+body {
+    background-color: #f2eecb;
+    background-image: url("./img/exclusive-paper.png");
+}
+
+nav {
+    background-color: #f2eecb;
+}
+
+.years-referenced {
+    margin-top: 20px;
+}
+
+/* change the background color */
+.navbar-custom .navbar-light {
+    background-color: $header-text;
+}
+/* change the brand and text color */
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+    color: #4F7178;
+}
+
+.timeline {
+    background-color: #e1d9ce;
+    position: fixed;
+    bottom: -30px;
+    left: 0;
+    right: 0;
+}
+
+.amazon-link {
+    padding: 20px;
+    border-style: solid;
+    border-color: #cab08f;
+    border-width: 1px;
+}
